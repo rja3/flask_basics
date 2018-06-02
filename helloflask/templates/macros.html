@@ -1,0 +1,16 @@
+{% macro render_table(dict) %}
+
+<table>
+    <tr>
+        <th>name</th><th>value</th>
+    </tr>
+
+    {% for key, val in dict.items() %}
+        <tr>
+        <td>{{ key }}</td><td>{{ val }}</td>
+        </tr>
+    {% endfor %}
+
+</table>
+
+{% endmacro %}
