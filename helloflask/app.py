@@ -16,10 +16,15 @@ app.config.update(
 # Create a database and pass the Flask app to it.
 db = SQLAlchemy(app)
 
+g = 0
+
 @app.route('/')
 def hello_world():
-    return 'Hello World'
+    return 'Hello World ' + str(g)
 
+@app.before_request
+def before():
+    g = 1;
 
 class Publication(db.Model):
 
